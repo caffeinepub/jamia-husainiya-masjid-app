@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+
+    /* Islamic Green Palette */
+    --background: 0.967 0.008 150;
+    --foreground: 0.12 0.025 160;
+    --card: 1 0 0;
+    --card-foreground: 0.12 0.025 160;
+    --popover: 1 0 0;
+    --popover-foreground: 0.12 0.025 160;
+
+    /* Deep green primary #0F4D3A */
+    --primary: 0.345 0.088 163;
+    --primary-foreground: 0.99 0 0;
+
+    /* Light mint secondary */
+    --secondary: 0.93 0.04 152;
+    --secondary-foreground: 0.345 0.088 163;
+
+    /* Muted soft */
+    --muted: 0.945 0.018 155;
+    --muted-foreground: 0.46 0.025 160;
+
+    /* Gold accent #E2B354 */
+    --accent: 0.785 0.128 78;
+    --accent-foreground: 0.12 0.025 160;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders & inputs */
+    --border: 0.895 0.025 155;
+    --input: 0.895 0.025 155;
+    --ring: 0.345 0.088 163;
+
+    /* Mint surface */
+    --mint: 0.93 0.04 152;
+    --gold: 0.785 0.128 78;
+    --green-deep: 0.345 0.088 163;
+    --green-hero: 0.38 0.1 163;
+
+    /* Charts */
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 0.345 0.088 163;
+    --sidebar-foreground: 0.99 0 0;
+    --sidebar-primary: 0.785 0.128 78;
+    --sidebar-primary-foreground: 0.12 0 0;
+    --sidebar-accent: 0.38 0.1 163;
+    --sidebar-accent-foreground: 0.99 0 0;
+    --sidebar-border: 0.38 0.1 163;
+    --sidebar-ring: 0.785 0.128 78;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  .font-urdu {
+    font-family: "Noto Nastaliq Urdu", serif;
+  }
+}
+
+@layer utilities {
+  .bg-mint {
+    background-color: oklch(var(--mint));
+  }
+  .bg-green-deep {
+    background-color: oklch(var(--green-deep));
+  }
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+  .text-green-deep {
+    color: oklch(var(--green-deep));
+  }
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+  .shadow-card {
+    box-shadow: 0 2px 12px 0 rgba(15, 77, 58, 0.08), 0 1px 3px 0
+      rgba(0, 0, 0, 0.06);
+  }
+  .shadow-nav {
+    box-shadow: 0 -2px 12px 0 rgba(15, 77, 58, 0.08);
+  }
+  .phone-frame {
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100dvh;
+    position: relative;
+    background: oklch(var(--background));
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Scrollbar hide for mobile feel */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
